@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Analysis — Sentinel AI</title>
+
+<link rel="stylesheet" href="style.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdn.socket.io/4.7.2/socket.io.min.js"></script>
+
+</head>
+
+<body onload="checkAuth(); loadAnalysisCharts();">
+
+<!-- ===== NAVBAR ===== -->
+<div class="nav">
+    <div class="project-name">Sentinel AI</div>
+
+    <div class="nav-links">
+        <a href="home.html">Home</a>
+        <a href="prediction.html">Prediction</a>
+        <a href="analysis.html">Analysis</a>
+        <a href="#" onclick="logout()">Logout</a>
+    </div>
+</div>
+
+<!-- ===== HEADER ===== -->
+<div class="card">
+    <h2 style="text-align:center;">📊 Model Performance Analysis</h2>
+</div>
+
+<!-- ===== METRICS ===== -->
+<div class="metric-grid">
+
+    <div class="metric-card">
+        <div class="metric-title">Accuracy</div>
+        <div id="acc" class="metric-value">--</div>
+    </div>
+
+    <div class="metric-card">
+        <div class="metric-title">Precision</div>
+        <div id="prec" class="metric-value">--</div>
+    </div>
+
+    <div class="metric-card">
+        <div class="metric-title">Recall</div>
+        <div id="rec" class="metric-value">--</div>
+    </div>
+
+    <div class="metric-card">
+        <div class="metric-title">F1 Score</div>
+        <div id="f1" class="metric-value">--</div>
+    </div>
+
+</div>
+
+<!-- ===== CHARTS ===== -->
+<!-- <div class="chart-grid">
+
+    <div class="chart-card">
+        <h3>Confusion Matrix</h3>
+        <canvas id="cm"></canvas>
+    </div>
+
+    <div class="chart-card">
+        <h3>ROC Curve</h3>
+        <canvas id="roc"></canvas>
+    </div>
+
+    <div class="chart-card">
+        <h3>Precision–Recall Curve</h3>
+        <canvas id="pr"></canvas>
+    </div>
+
+    <div class="chart-card">
+        <h3>Feature Importance</h3>
+        <canvas id="feat"></canvas>
+    </div>
+
+</div> -->
+
+
+<!-- ===== NEW 4 BLOCK ANALYSIS ===== -->
+<div class="analysis-grid">
+
+    <!-- BLOCK 1 -->
+    <div class="analysis-card">
+        <h3>Confusion Matrix</h3>
+        <canvas id="cm"></canvas>
+    </div>
+
+    <!-- BLOCK 2 -->
+    <div class="analysis-card">
+        <h3>ROC Curve</h3>
+        <canvas id="roc"></canvas>
+    </div>
+
+    <!-- BLOCK 3 -->
+    <div class="analysis-card">
+        <h3>Precision–Recall Curve</h3>
+        <canvas id="pr"></canvas>
+    </div>
+
+    <!-- BLOCK 4 -->
+    <div class="analysis-card">
+        <h3>Top Feature Influence</h3>
+        <canvas id="feat"></canvas>
+    </div>
+
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>

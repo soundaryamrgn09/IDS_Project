@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home — Sentinel AI</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body onload="checkAuth()">
+
+<!-- ===== NAVBAR ===== -->
+<div class="nav">
+    <div class="project-name">Sentinel AI</div>
+
+    <div class="nav-links">
+        <a href="home.html">Home</a>
+        <a href="prediction.html">Prediction</a>
+        <a href="analysis.html">Analysis</a>
+        <a href="#" onclick="logout()">Logout</a>
+    </div>
+</div>
+
+<!-- ===== HERO SECTION ===== -->
+<div class="hero">
+    <div class="hero-content">
+        <div class="hero-title">Sentinel AI</div>
+        <div class="hero-sub">
+            Real-Time Network Intrusion Detection System
+        </div>
+    </div>
+</div>
+
+<!-- ===== ABOUT ===== -->
+<div class="card">
+    <h2>About The Project</h2>
+
+    <p>
+        Sentinel AI is a Machine Learning based Network Intrusion Detection System
+        that monitors network behavior and detects malicious activity in real time.
+        It combines supervised and unsupervised models with a live monitoring dashboard.
+    </p>
+</div>
+
+<!-- ===== FEATURES ===== -->
+<div class="info-grid">
+
+    <div class="info-card">
+        <div class="info-title">🤖 ML Detection Engine</div>
+        Random Forest and Isolation Forest models classify traffic as normal or attack.
+    </div>
+
+    <div class="info-card">
+        <div class="info-title">⚡ Real-Time Alerts</div>
+        Flask + SocketIO pushes live events instantly without page refresh.
+    </div>
+
+    <div class="info-card">
+        <div class="info-title">📊 Explainable AI</div>
+        SHAP shows which features influenced predictions.
+    </div>
+
+</div>
+
+<!-- ===== EXTRA FEATURES ===== -->
+<div class="info-grid">
+
+    <div class="info-card">
+        <div class="info-title">🗂 Dataset</div>
+        NSL-KDD dataset used for training and evaluation.
+    </div>
+
+    <div class="info-card">
+        <div class="info-title">🌍 Live Visualization</div>
+        Real-time global map shows attack & normal traffic.
+    </div>
+
+    <div class="info-card">
+        <div class="info-title">🔐 Use Cases</div>
+        SOC monitoring, anomaly detection, cyber threat analytics.
+    </div>
+
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>

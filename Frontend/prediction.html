@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Live Prediction</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet"
+     href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://cdn.socket.io/4.7.2/socket.io.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+<!-- <body onload="checkAuth(); initLivePrediction();"> -->
+<body  onload="checkAuth(); ">
+    
+<!-- ===== NAVBAR ===== -->
+<div class="nav">
+    <div class="project-name">Sentinel AI</div>
+
+    <div class="nav-links">
+        <a href="home.html">Home</a>
+        <a href="prediction.html">Prediction</a>
+        <a href="analysis.html">Analysis</a>
+        <a href="#" onclick="logout()">Logout</a>
+    </div>
+</div>
+
+<!-- ===== MAP ===== -->
+<div class="card">
+    <h3>🌍 Live Network Monitoring</h3>
+    <div id="map" style="height:420px;"></div>
+</div>
+
+<!-- ===== BOTTOM SECTION ===== -->
+<div class="chart-grid">
+
+    <!-- ALERT FEED -->
+    <div class="card">
+        <h3>🚨 Live Alert Feed</h3>
+        <div id="feed" class="feed"></div>
+    </div>
+
+    <!-- SHAP GRAPH -->
+    <div class="card">
+        <h3>🔍 SHAP Explainability</h3>
+        <canvas id="shapChart"></canvas>
+    </div>
+
+</div>
+
+<!-- ===== ZERO DAY PANEL ===== -->
+<div class="card">
+<h3>🧪 Zero-Day Anomaly Monitor</h3>
+
+<div class="metric-grid">
+
+    <div class="metric-card">
+        <div class="metric-title">Anomaly Score</div>
+        <div id="anomScore" class="metric-value">0.00</div>
+    </div>
+
+    <div class="metric-card">
+        <div class="metric-title">Risk Level</div>
+        <div id="riskLevel" class="metric-value">Normal</div>
+    </div>
+
+    <div class="metric-card">
+        <div class="metric-title">Isolation Result</div>
+        <div id="isoResult" class="metric-value">–</div>
+    </div>
+
+</div>
+</div>
+
+<script src="app.js"></script>
+
+<script>
+    initLivePrediction();
+</script>
+
+</body>
+</html>
